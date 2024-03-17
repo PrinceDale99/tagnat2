@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" 
+  href="./img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <title>Facilities - TNHS Website</title>
+  <script>
+            let docTitle = document.title;
+      window.addEventListener("blur", () =>{
+          document.title = "TNHS Website";
+      })
+      window.addEventListener("focus", () =>{
+          document.title = docTitle;
+      })
+  </script>
+    
+</head>
+    <div class="loader">        <div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="square"></div></div>
+
+    <main>
+        <div class="home"> <span class="goto" id="home"></span>
+
+            <header class="text-gray-700 body-font border-b border-gray-200">
+                <img src="./img/favicon.png" height="40px" width="40px" style="margin-left: 50px;">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="https://tailblocks.cc" target="_blank">
+                    <span class="ml-3 text-xl">Taguig National High School</span>
+                  </a>
+                <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" >
+                  <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <span class="hellonigga"><a class="mr-5 hover:text-gray-900" href="index.html">Home</a></span>
+                    <span class="hellonigga">  <a class="mr-5 hover:text-gray-900" href="about.html">About Us</a></span>
+                    <span class="hellonigga"><a class="mr-5 hover:text-gray-900" href="adms.html">Admission</a></span>
+                    <span class="hellonigga">  <a class="mr-5 hover:text-gray-900" href="bldg.html">Buildings & Facilities</a></span>
+                    <span class="hellonigga">  <a class="mr-5 hover:text-gray-900" href="act.html">Calendar & Activities</a></span>
+                  </nav>
+                </div>
+              </header>
+              <style>
+                .image {
+                  margin: 0 auto;
+                }
+              </style>
+              <section class="text-gray-700 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                  <img class="image" src="./img/map.png" alt="Image">
+                  <!-- This is a message that will be displayed if jQuery or the plugin is not loaded -->
+                  <div class="msg" style="display:none;">jQuery or Image Magnifier plugin is not loaded.</div>
+                  </div>
+                  </section>
+        <div class="contact" id="contact">
+            <p class="h1">Contact Me</p>
+            <div class="social">
+                <a href="https://facebook.com/princedale.limosnero" target="_blank">Facebook</a>
+                <a href="https://twitter.com/DaleLimosnero" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Github</a>
+                <a href="#" target="_blank">Instagram</a>
+                <p>&copy; PD Sites</p>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://assets.website-files.com/5e2755779d8b8ea1d6373797/5ea88e92dce9b4b66f165490_zoom.txt"></script>
+<script>
+  jQuery(function(){
+
+  if(!$.fn.imagezoomsl){
+
+      $('.msg').show();
+      return;
+    }
+    else $('.msg').hide();
+
+    // plugin initialization
+    $('.image').imagezoomsl({
+
+      innerzoommagnifier: true,
+      classmagnifier: "round-loope",
+      magnifiersize: [150, 150],
+      // disables the scrolling of the document with the mouse wheel when the cursor is over the image
+      disablewheel: false
+    });
+  });
+</script>
+</body>
+
+</html>

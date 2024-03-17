@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Exam Billing</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            margin: 20px;
+            background: linear-gradient(135deg, red, black);
+        }
+        
+        .bading {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+        h1 {
+            color: black;
+        }
+
+        label {
+            font-size: 18px;
+            color: black;
+            margin-right: 10px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3079ab;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Additional styling for checkboxes */
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Additional styling for checkboxes container */
+        .checkbox-group {
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function updateOptions() {
+            var ctScanCheckbox = document.getElementById("ctScanCheckbox");
+            var xRayCheckbox = document.getElementById("xRayCheckbox");
+            var physicalExamCheckbox = document.getElementById("physicalExamCheckbox");
+            var headCheckbox = document.getElementById("headCheckbox");
+            var bodyCheckbox = document.getElementById("bodyCheckbox");
+            var mouthTestCheckbox = document.getElementById("mouthTestCheckbox");
+            var urineTestCheckbox = document.getElementById("urineTestCheckbox");
+
+            // Reset all checkboxes
+            headCheckbox.checked = false;
+            bodyCheckbox.checked = false;
+            mouthTestCheckbox.checked = false;
+            urineTestCheckbox.checked = false;
+
+            // Set automatic checkboxes based on selected medical exam
+            if (ctScanCheckbox.checked) {
+                headCheckbox.checked = true;
+            } else if (xRayCheckbox.checked) {
+                bodyCheckbox.checked = true;
+            } else if (physicalExamCheckbox.checked) {
+                headCheckbox.checked = true;
+                bodyCheckbox.checked = true;
+                mouthTestCheckbox.checked = true;
+                urineTestCheckbox.checked = true;
+            }
+        }
+
+        function calculateBill() {
+            var ctScanCheckbox = document.getElementById("ctScanCheckbox");
+            var xRayCheckbox = document.getElementById("xRayCheckbox");
+            var physicalExamCheckbox = document.getElementById("physicalExamCheckbox");
+            var headCheckbox = document.getElementById("headCheckbox");
+            var bodyCheckbox = document.getElementById("bodyCheckbox");
+            var mouthTestCheckbox = document.getElementById("mouthTestCheckbox");
+            var urineTestCheckbox = document.getElementById("urineTestCheckbox");
+            var bill = 0;
+
+            // Calculate bill based on selected medical exams
+            if (ctScanCheckbox.checked) {
+                bill += 12000;
+            }
+            if (xRayCheckbox.checked) {
+                bill += 1000;
+            }
+            if (physicalExamCheckbox.checked) {
+                bill += 700;
+            }
+
+            // Calculate additional bill based on selected options
+            if (headCheckbox.checked) {
+                bill += 500; // Assuming cost for head-related tests
+            }
+            if (bodyCheckbox.checked) {
+                bill += 800; // Assuming cost for body-related tests
+            }
+            if (mouthTestCheckbox.checked) {
+                bill += 200; // Assuming cost for mouth test
+            }
+            if (urineTestCheckbox.checked) {
+                bill += 300; // Assuming cost for urine test
+            }
+
+            document.getElementById("result").innerText = "Total Bill: ₱" + bill.toLocaleString();
+        }
+    </script>
+</head>
+<body>
+    <div class="bading">
+    <h1>Medical Exam Billing</h1>
+    
+    <label><input type="checkbox" id="ctScanCheckbox" onchange="updateOptions()"> CT Scan (₱12,000)</label>
+    <label><input type="checkbox" id="xRayCheckbox" onchange="updateOptions()"> X-ray (₱1,000)</label>
+    <label><input type="checkbox" id="physicalExamCheckbox" onchange="updateOptions()"> Physical Exam (₱700)</label>
+
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="headCheckbox" disabled> Head (for CT Scan)</label>
+        <label><input type="checkbox" id="bodyCheckbox" disabled> Body (for X-ray and Physical Exam)</label>
+        <label><input type="checkbox" id="mouthTestCheckbox" disabled> Mouth Test</label><label><input type="checkbox" id="mouthTestCheckbox" disabled> Mouth Test</label>
+        <label><input type="checkbox" id="urineTestCheckbox" disabled> Urine Test</label>
+    </div>
+
+    <button onclick="calculateBill()">Calculate Bill</button>
+    <p id="result"></p></div>
+</body>
+</html>

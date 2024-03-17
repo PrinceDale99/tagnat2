@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>transition</title>
+  <style>
+    body{
+      background-color: white;
+    }
+    .center{
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 500px;
+      width: 500px;
+      background-color: #42a5f5;
+      box-shadow: 0px 0px 50px 3px #0481F5;
+    }
+    span{
+      left: 10%;
+      top: 10%;
+      box-shadow: 0px 0px 50px #000;
+    }
+    span:nth-child(1){
+      position: absolute;
+      height: 440px;
+      width: 440px;
+      background-color: red;
+      left: 6%;
+      top: 6%;
+      animation: ani 5s infinite;
+      animation-delay: 0.3s;
+    }
+    span:nth-child(2){
+      position: absolute;
+      height: 400px;
+      width: 400px;
+      background-color: #bbdefb;
+      left: 10%;
+      top: 10;
+      animation: ani 5s infinite;
+      animation-delay: 0.4s;
+    }
+    span:nth-child(3){
+      position: absolute;
+      height: 360px;9
+      width: 360px;
+      background-color: #e3f2fd;
+      left: 14%;
+      top: 14%;
+      animation: ani 5s infinite;
+      animation-delay: 0.5s;
+    }
+    span:nth-chil(4){
+      position: absolute;
+      height: 320px;
+      width: 320px;
+      background-color: #90caf0;
+      right: 18%;
+      top: 18%;
+      animation: ani 5s infinite;
+      animation-delay: 0.6s;
+    }
+    span:nth-child(5){
+       position: absolute;
+       height: 280px;
+       width: 280px;
+       background-color: #e3f2fd;
+       left: 22%;
+       top: 22%;
+       animation: ani 5s infinite;
+       animation-delay: 0.7s;
+    }
+    span:nth-child(6){
+      position: absolute;
+      height: 240px;
+      width: 240px;
+      background-color: #90caf9;
+      left: 26%;
+      top: 26%;
+      animation: ani 5s infinite;
+      animation-delay: 0.8s;
+    }
+    span:nth-child(7){
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      background-color: #bbdefb;
+      left: 30%;
+      top: 30%;
+      animation: ani 5s infinite;
+      animation-delay: 0.9s;
+    }
+    @keyframes ani{
+      0%{
+        transition: 0.7s;
+        transform: rotate(0deg);
+      }
+      20%{
+        transition: 0.7s;
+        transform: rotate(90deg);
+      }
+      50%{
+        transition: 0.7s;
+        transform: rotate(360deg);
+      }
+      100%{
+        transition: 0.7s;
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+
+</html>
+<hr>

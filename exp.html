@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exponent Calculator</title>
+<script>
+function calculateExponent() {
+    var input = document.getElementById("exponentInput").value;
+    var parts = input.split("^");
+    var base = parseInt(parts[0]);
+    var exponent = parseInt(parts[1]);
+    var result = 1;
+    var explanation = base;
+
+    var i = 1;
+    while (i <= exponent) {
+        result *= base;
+        if (i < exponent) {
+            explanation += " x " + base;
+        }
+        i++;
+    }
+
+    document.getElementById("result").innerHTML = "Show: " + explanation + " = " + result;
+}
+</script>
+</head>
+<body>
+<h2>Exponent Calculator</h2>
+<p>Enter a base and exponent separated by ^ (e.g., 2^3):</p>
+<input type="text" id="exponentInput">
+<button onclick="calculateExponent()">Calculate</button>
+<p id="result"></p>
+</body>
+</html>
